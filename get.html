@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<script>
+
+var xml=new XMLHttpRequest();
+xml.open('get','https://blog.zsxsoft.com/w2tmp/get.php?name=汉森','true');
+xml.setRequestHeader('Content-type','text/xml');
+xml.send();
+xml.onreadystatechange=function()
+{
+    if (xml.readyState==4&&xml.status==200)
+    {
+        document.write(unescape(xml.responseText.replace(/\\u/g, '%u')));
+    }
+}
+
+</script>
+</head>
+<body>
+ 
+</body>
+</html>
