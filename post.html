@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax-post</title>
+    <script>
+    
+    var shu="汉森";
+    var xml=new XMLHttpRequest();
+    xml.open('POST','https://blog.zsxsoft.com/w2tmp/post.php','true');
+    xml.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xml.send('name='+shu);
+    xml.onreadystatechange=function()
+    {
+        if (xml.readyState==4&&xml.status==200)
+        {
+            document.write(unescape(xml.responseText.replace(/\\u/g, '%u')));
+        }
+    }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
